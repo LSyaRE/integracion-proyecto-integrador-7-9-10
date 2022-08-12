@@ -10,22 +10,43 @@ import { SugerenciaFormComponent } from '../feature/sugerencia/form/sugerencia-f
 import { SugerenciaListComponent } from '../feature/sugerencia/list/sugerencia-list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MainComponent } from './main/main.component';
+import { CarreraFormComponent } from '../feature/carrera/form/carrera.form.component';
+import { RespuestaFormComponent } from '../feature/respuesta/form/respuesta-form.component';
+import { TicketFormComponent } from '../feature/ticket/form/ticket.form.component';
+import { UsuarioFormComponent } from '../feature/usuario/form/usuario.form.component';
+import { CarreraListComponent } from '../feature/carrera/list/carrera-list.component';
+import { RespuestaListComponent } from '../feature/respuesta/list/respuesta-list.component';
+import { TicketListComponent } from '../feature/ticket/list/ticket-list.component';
+import { UsuarioListComponent } from '../feature/usuario/list/usuario-list.component';
 const routes: Routes = [
   {path: '', component:MainComponent ,
     children: [
       {path: 'dashboard', component:DashboardComponent},
       {path: 'rol-form', component:RolFormComponent},
       {path: 'rol-form/:id', component:RolFormComponent},
-      {path: 'rol-list', component:RolListComponent},
-      {path: 'modulo-list', component:ModuloListComponent},
       {path: 'modulo-form', component:ModuloFormComponent},
       {path: 'modulo-form/:id', component:ModuloFormComponent},
       {path: 'motivo-form', component:MotivoFormComponent},
       {path: 'motivo-form/:id', component:MotivoFormComponent},
-      {path: 'motivo-list', component:MotivoListComponent},
       {path: 'sugerencia-form', component:SugerenciaFormComponent},
       {path: 'sugerencia-form/:id', component:SugerenciaFormComponent},
-      {path: 'sugerencia-list', component:SugerenciaListComponent}
+      {path: 'usuario-form', component:UsuarioFormComponent},
+      {path: 'usuario-form/:id', component:UsuarioFormComponent},
+      {path: 'carrera-form', component:CarreraFormComponent},
+      {path: 'carrera-form/:id', component:CarreraFormComponent},
+      {path: 'ticket-form', component:TicketFormComponent},
+      {path: 'ticket-form/:id', component:TicketFormComponent},
+      {path: 'respuesta-form', component:RespuestaFormComponent},
+      {path: 'respuesta-form/:id', component:RespuestaFormComponent},
+      {path: 'motivo-list', component:MotivoListComponent},
+      {path: 'rol-list', component:RolListComponent},
+      {path: 'sugerencia-list', component:SugerenciaListComponent},
+      {path: 'modulo-list', component:ModuloListComponent},
+      {path: 'respuesta-list', component: RespuestaListComponent},
+      {path:'carrera-list',component:CarreraListComponent},
+      {path: 'usuario-list', component: UsuarioListComponent},
+      {path: 'ticket-list',component:TicketListComponent },
+    
     ]
   }
 ];
