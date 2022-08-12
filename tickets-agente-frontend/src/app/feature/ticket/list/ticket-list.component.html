@@ -1,0 +1,32 @@
+<div class="">
+    <app-ticket-toolbar (termEmitter)="findByDescription($event)" ></app-ticket-toolbar>
+    <div class="overflow-x-auto bg-white">
+        <table class="table table-compact w-full" >
+            <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th>Descripcion</th>
+                    <th>Activo</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let ticket of ticketList">
+                    <td>
+                        
+                        <a [routerLink]="['../ticket-form',ticket.id]">
+                            <svg class="h-4 w-4 ml-5" xmlns="http://www.w3.org/2000/svg" id="Filled" viewBox="0 0 24 24" ><path d="M1.172,19.119A4,4,0,0,0,0,21.947V24H2.053a4,4,0,0,0,2.828-1.172L18.224,9.485,14.515,5.776Z"/><path d="M23.145.855a2.622,2.622,0,0,0-3.71,0L15.929,4.362l3.709,3.709,3.507-3.506A2.622,2.622,0,0,0,23.145.855Z"/></svg>
+                        </a>
+                    </td>
+                    <td>{{ticket.id}}</td>
+                    <td>{{ticket.description}}</td>
+                    <td>
+                        <input class="toggle toggle-primary" type="checkbox" name="" id="" [ngModel]="ticket.enabled" >
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</div>

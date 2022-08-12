@@ -1,0 +1,8 @@
+<select #selectTicket (change)="onSelect(selectTicket.value)" class="select select-primary" name="" id="">
+    <option value=0 selected disabled>Seleccion</option>
+    <option *ngFor="let ticket of tickets"
+    [value]="ticket.id"
+    [selected]="ticket.id === ticketId">
+      {{ticket.description}}
+    </option>
+  </select>
