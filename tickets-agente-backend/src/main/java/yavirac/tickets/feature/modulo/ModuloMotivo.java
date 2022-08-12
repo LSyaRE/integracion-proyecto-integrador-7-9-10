@@ -7,7 +7,7 @@ import org.springframework.data.relational.core.mapping.Table;
 import lombok.Data;
 
 @Data
-@Table("modulo_motivo")
+@Table("ticket-agente\".\"modulo_motivo")
 
 public class ModuloMotivo {
 
@@ -16,6 +16,5 @@ public class ModuloMotivo {
     private long id;
     private Long moduloId;
     private Long motivoId;
-    private String comentario;
     
 }

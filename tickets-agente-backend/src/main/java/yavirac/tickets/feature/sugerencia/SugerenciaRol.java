@@ -7,7 +7,7 @@ import org.springframework.data.relational.core.mapping.Table;
 import lombok.Data;
 
 @Data
-@Table("sugerencia_roles")
+@Table("ticket-agente\".\"sugerencia_roles")
 
 public class SugerenciaRol {
 
@@ -16,6 +16,5 @@ public class SugerenciaRol {
     private long id;
     private Long sugerenciaId;
     private Long rolId;
-    private String comentario;
     
 }

@@ -12,7 +12,7 @@ import org.springframework.data.relational.core.mapping.Table;
 import lombok.Data;
 
 @Data
-@Table("sugerencia")
+@Table("ticket-agente\".\"sugerencia")
 public class Sugerencia {
 
     @Id
