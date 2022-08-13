@@ -7,7 +7,8 @@ import org.springframework.data.relational.core.mapping.Table;
 import lombok.Data;
 
 @Data
-@Table("usuario_carrera")
+
+@Table("ticket-solicitante\".\"usuario_carrera")
 public class CarreraUsuario {
     
     @Id private long id;

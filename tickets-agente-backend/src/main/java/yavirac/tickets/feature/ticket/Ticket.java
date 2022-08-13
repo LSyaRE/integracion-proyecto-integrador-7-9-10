@@ -15,7 +15,7 @@ import org.springframework.data.relational.core.mapping.Table;
 import lombok.Data;
 
 @Data
-@Table("ticket")
+@Table("ticket-solicitante\".\"ticket")
 public class Ticket {
 
     @Id
