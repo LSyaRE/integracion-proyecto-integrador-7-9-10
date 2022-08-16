@@ -57,6 +57,7 @@ export class ModuloFormComponent implements OnInit {
           rolId: 0,
           motivos: []
         };
+        this.router.navigate(['/layout/modulo-list']);
       }
     )
   }
@@ -89,7 +90,7 @@ export class ModuloFormComponent implements OnInit {
 
     this.currentEntity.motivos =
     this.currentEntity.motivos.filter(
-      (item) => item.motivoId != id 
+      (item) => item.motivoId != id
     );
   }
 
