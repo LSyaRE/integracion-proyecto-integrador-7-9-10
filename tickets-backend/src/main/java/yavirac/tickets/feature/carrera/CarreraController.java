@@ -55,8 +55,7 @@ public class CarreraController {
     public List<Carrera> findAll(){
         return carreraService.findAll();
     }
-    
-
+  
     @GetMapping("/findByNombre/{term}")
     public List<Carrera> findByNombre(@PathVariable String term){
         return carreraService.findByNombre(term);
