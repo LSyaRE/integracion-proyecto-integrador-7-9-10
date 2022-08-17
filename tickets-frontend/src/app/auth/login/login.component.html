@@ -23,7 +23,7 @@
             <label class="label">
               <span class="label-text">Contraseña</span>
             </label>
-            <input type="text" placeholder="contraseña" class="input input-bordered" [(ngModel)]="credential.password" (keyup.enter)="singIn()"/>
+            <input type="password" placeholder="contraseña" class="input input-bordered" [(ngModel)]="credential.password" (keyup.enter)="singIn()"/>
           </div>
           <div class="form-control mt-6">
             <button class="btn btn-primary" (click)="singIn()">Acceder</button>

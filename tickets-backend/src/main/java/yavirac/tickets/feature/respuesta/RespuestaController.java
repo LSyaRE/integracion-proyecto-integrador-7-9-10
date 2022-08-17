@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 
 
 @RestController
@@ -26,6 +27,7 @@ public class RespuestaController {
     //CRUD
 
     //Create
+    @PreAuthorize("hasAuthority('USUARIO_CREAR')")
     @PostMapping("/save")
     public Respuesta save(@RequestBody Respuesta respuesta){
         return respuestaService.save(respuesta);
@@ -38,17 +40,20 @@ public class RespuestaController {
     }
 
     //Update
+    @PreAuthorize("hasAuthority('USUARIO_ACTUALIZAR')")
     @PutMapping("/update")
     public Respuesta update(@RequestBody Respuesta respuesta)
     {
         return respuestaService.save(respuesta);
     }
+    @PreAuthorize("hasAuthority('USUARIO_LEER')")
     @GetMapping("/findAll")
     public List<Respuesta> findAll(){
         return respuestaService.findAll();
     }
 
     //Delete
+    @PreAuthorize("hasAuthority('USUARIO_ELIMINAR')")
     @DeleteMapping("/deleteById/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable long id){

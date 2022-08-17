@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,6 +28,7 @@ public class TicketController {
 
 
     //Create
+    @PreAuthorize("hasAuthority('USUARIO_CREAR')")
     @PostMapping("/save")
     public Ticket save(@RequestBody Ticket ticket){
         return ticketService.save(ticket);
@@ -39,6 +41,7 @@ public class TicketController {
     }
 
     //Update
+    @PreAuthorize("hasAuthority('USUARIO_ACTUALIZAR')")
     @PutMapping("/update")
     public Ticket update(@RequestBody Ticket ticket)
     {
@@ -46,12 +49,14 @@ public class TicketController {
     }
 
     //Delete
+    @PreAuthorize("hasAuthority('USUARIO_ELIMINAR')")
     @DeleteMapping("/deleteById/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable long id){
         ticketService.deleteById(id);
     }
 
+    @PreAuthorize("hasAuthority('USUARIO_LEER')")
     @GetMapping("/findAll")
     public List<Ticket> findAll(){
         return ticketService.findAll();
